@@ -1,0 +1,59 @@
+1558080523717|4|statement|connection 0|SELECT * FROM web_banner order by sort asc|SELECT * FROM web_banner order by sort asc
+1558080523756|0|commit|connection 0||
+1558080717875|0|commit|connection 0||
+1558080720570|0|commit|connection 0||
+1558080721309|0|commit|connection 0||
+1558080880015|0|statement|connection 0|SELECT * FROM web_banner order by sort asc|SELECT * FROM web_banner order by sort asc
+1558080880020|1|commit|connection 0||
+1558080882803|1|commit|connection 0||
+1558080884259|5|commit|connection 0||
+1558080885055|0|commit|connection 0||
+1558080885734|0|commit|connection 0||
+1558081350066|5|statement|connection 0|SELECT * FROM web_banner order by sort asc|SELECT * FROM web_banner order by sort asc
+1558081350090|0|commit|connection 0||
+1558231347738|1|statement|connection 0|SELECT * FROM web_banner order by sort asc|SELECT * FROM web_banner order by sort asc
+1558231347764|0|commit|connection 0||
+1558231395314|1|commit|connection 0||
+1558231435785|0|commit|connection 0||
+1558232436708|1|statement|connection 0|SELECT * FROM web_banner order by sort asc|SELECT * FROM web_banner order by sort asc
+1558232436711|0|commit|connection 0||
+1558232437879|0|commit|connection 0||
+1558232438095|1|commit|connection 0||
+1558232480809|0|commit|connection 0||
+1558232490774|0|commit|connection 0||
+1558232491034|0|commit|connection 0||
+1558232491294|0|commit|connection 0||
+1558232491509|0|commit|connection 0||
+1558232494018|0|commit|connection 0||
+1558232494311|0|commit|connection 0||
+1558232494493|0|commit|connection 0||
+1558232502706|0|commit|connection 0||
+1558232502886|0|commit|connection 0||
+1558232503052|0|commit|connection 0||
+1558232503228|0|commit|connection 0||
+1558232503404|0|commit|connection 0||
+1558232503580|0|commit|connection 0||
+1558232503737|0|commit|connection 0||
+1558232503916|0|commit|connection 0||
+1558232504095|0|commit|connection 0||
+1558232504275|1|commit|connection 0||
+1558232504436|0|commit|connection 0||
+1558232504615|0|commit|connection 0||
+1558232504780|0|commit|connection 0||
+1558232504960|1|commit|connection 0||
+1558232505131|0|commit|connection 0||
+1558232505322|0|commit|connection 0||
+1558232505488|0|commit|connection 0||
+1558232505676|1|commit|connection 0||
+1558232505869|0|commit|connection 0||
+1558232506067|0|commit|connection 0||
+1558232506243|1|commit|connection 0||
+1558232506435|0|commit|connection 0||
+1558232506631|1|commit|connection 0||
+1558232506805|0|commit|connection 0||
+1558232506987|1|commit|connection 0||
+1558232507170|1|commit|connection 0||
+1558232507346|0|commit|connection 0||
+1558232507538|0|commit|connection 0||
+1558232507730|0|commit|connection 0||
+1558232507920|0|commit|connection 0||

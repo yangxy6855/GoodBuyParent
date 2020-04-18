@@ -1,0 +1,14 @@
+#配置服务器的端口号
+server:
+  port: 10086
+#服务名
+spring:
+  application:
+    name: eureka1
+#注册地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka
+    registry-fetch-interval-seconds: 3000
+
