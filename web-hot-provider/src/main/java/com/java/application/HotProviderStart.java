@@ -18,7 +18,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableCaching//开启redis缓存
 @EnableDiscoveryClient
 public class HotProviderStart {
-    public static void main(String[] args) {
+public static void main(String[] args) {
         SpringApplication.run(HotProviderStart.class);
-    }
-}
+        }
+        }

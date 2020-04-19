@@ -1372,7 +1372,10 @@ String produtctDetailPath = "http://localhost:6060/";
 
 
 <div class="top">
-    <div class="logo"><a href="${ctx}/Home?action=index"><img src="${ctx}/statics/<%=basePath %>/static/images/logo.png"></a></div>
+    <div class="logo"><a href="${ctx}/Home?action=index"><img src="<%=basePath %>/static/images/logo.png"></a></div>
+<!--
+   <div class="logo"><a href="${ctx}/Home?action=index"><img src="${ctx}/statics/<%=basePath %>/static/images/logo.png"></a></div>
+-->
     <div class="search">
         <form>
             <input txype="text" value="" class="s_ipt">

@@ -1,18 +1,18 @@
 package com.java.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.java.service.SecKillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * description：
@@ -93,6 +93,22 @@ public class SeckillController {
             resultMap.put("status","1");//秒杀失败
             resultMap.put("msg","当前秒杀人员太多，系统崩溃了，下次再来吧");
             return resultMap;
+        }
+    }
+
+    @RequestMapping("/getRedisResultInfo")
+    public String getRedisResultInfo(String key){
+        ListOperations listVop = redisTemplate.opsForList();
+        SetOperations setOperations = redisTemplate.opsForSet();
+        if(key.equals("1")){
+            //可以秒杀了
+            Long seckill_product_size = listVop.size("seckill_product_1");
+            List seckill = listVop.range("seckill_product_1", 0, seckill_product_size-1);
+            return JSON.toJSONString(seckill);
+        }else{
+            Long seckill_users_size = setOperations.size("seckill_users_1");
+            Set seckill_users_1 = setOperations.members("seckill_users_1");
+            return JSON.toJSONString(seckill_users_1);
         }
     }
 

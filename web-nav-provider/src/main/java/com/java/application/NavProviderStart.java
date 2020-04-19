@@ -11,6 +11,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * description：前台横向导航栏提供者
  * author：丁鹏
  * date：14:05
+ *
+ * url:    http://localhost:8083/nav/getHxNavs
  */
 @SpringBootApplication(scanBasePackages = "com.java.*")
 @MapperScan(basePackages = "com.java.mapper")

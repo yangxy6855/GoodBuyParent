@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +29,7 @@ public class ProductDetailStaticTask {
     /**
      * 每隔20s执行一次
      */
-    @Scheduled(cron = "0/20 * * * * *")
+    @Scheduled(cron = "0/59 * * * * *")
     public void generateProductDetailHTMLPage(){
         List<Map<String, Object>> productDeteilList = productService.findAllProductDetailInfo();
         productDeteilList.forEach((Map<String, Object> temp) ->{
@@ -39,7 +38,11 @@ public class ProductDetailStaticTask {
                 Template template = configuration.getTemplate("Product.ftl");
                 //获取商品编号
                 String productNum = (String) temp.get("productNum");
-                File file = new File("D:\\GoodBuy\\productDetail\\"+productNum+".html");
+                File checkFile = new File("/Users/yangxy/Pictures/GoodBuy/productDetail");
+                if(!checkFile.exists()){
+                    checkFile.mkdirs();
+                }
+                File file = new File("/Users/yangxy/Pictures/GoodBuy/productDetail/"+productNum+".html");
                 BufferedWriter bw = new BufferedWriter(new FileWriter(file));
                 template.process(temp,bw);
                 bw.close();

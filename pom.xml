@@ -50,6 +50,14 @@
         <rabbitMQ.version>2.0.3.RELEASE</rabbitMQ.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <!-- springCloud -->

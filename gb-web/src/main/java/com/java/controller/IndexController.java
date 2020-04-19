@@ -1,11 +1,8 @@
 package com.java.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +18,9 @@ import java.util.*;
 public class IndexController {
     @Autowired
     private RestTemplate restTemplate;
+
+
+
 
 
     @PostMapping("/login/{uName}/pwd")
@@ -40,14 +40,29 @@ public class IndexController {
     @RequestMapping("/")
     public String toIndexPage(Model model){
         //1、调用横向导航栏提供者获取数据
-        List<Map<String,Object>> hxNavList = restTemplate.getForObject("http://webNavProvider/nav/getHxNavs", List.class);
+        //List<Map<String,Object>> hxNavList = restTemplate.getForObject("http://webNavProvider/nav/getHxNavs", List.class);
+        List<Map<String,Object>> hxNavList = restTemplate.getForObject("http://webBannerProvider/banner/getHxNavs", List.class);
         model.addAttribute("hxNavList",hxNavList);
+
         //2、调用轮播图提供者获取数据
+        //List<Map<String,Object>> bannerList = restTemplate.getForObject("http://webBannerProvider/banner/getWebBanners", List.class);
         List<Map<String,Object>> bannerList = restTemplate.getForObject("http://webBannerProvider/banner/getWebBanners", List.class);
         model.addAttribute("bannerList",bannerList);
+
         //3、调用热门商品提供者获取数据
-       List<Map<String,Object>> hotProductList = restTemplate.getForObject("http://webHotProvider/hot/getHotProducts", List.class);model.addAttribute("hotProductList",hotProductList);
+        //List<Map<String,Object>> hotProductList = restTemplate.getForObject("http://webHotProvider/hot/getHotProducts", List.class);model.addAttribute("hotProductList",hotProductList);
+        List<Map<String,Object>> hotProductList = restTemplate.getForObject("http://webBannerProvider/banner/getHotProducts", List.class);model.addAttribute("hotProductList",hotProductList);
         return "/pages/Index.jsp";
     }
 
+    @RequestMapping("/Login.html")
+    public String toLoginPage(Model model){
+        return "/pages/Login.html";
+    }
+
+
+
+
+
 }
+

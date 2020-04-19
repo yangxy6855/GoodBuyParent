@@ -35,7 +35,7 @@ public class BannerServiceImpl implements BannserService{
             if(v==null){//redis中不存在
                 List<Map<String, Object>> bannerList = bannerMapper.selectBanners();
                 vop.set("webBanners",bannerList);
-                redisTemplate.expire("webBanners",5, TimeUnit.MINUTES);
+                redisTemplate.expire("webBanners",300, TimeUnit.DAYS);
                 return bannerList;
             }else{//redis中存在
                 return (List<Map<String, Object>>) v;
