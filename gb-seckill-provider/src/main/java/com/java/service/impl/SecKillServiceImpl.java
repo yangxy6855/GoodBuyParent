@@ -1,5 +1,6 @@
 package com.java.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.java.mapper.SecKillMapper;
 import com.java.service.SecKillService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -77,6 +78,7 @@ public class SecKillServiceImpl implements SecKillService{
         dataMap.put("seckillId",seckillId);
         dataMap.put("uName",uName);
         rabbitTemplate.convertAndSend("ex-order",null,dataMap);
+        System.out.println("save 2 rabbitMQ success dataMap is "+JSON.toJSONString(dataMap));
     }
 
 }

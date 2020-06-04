@@ -5,17 +5,17 @@ spring:
     name: webSecKillProvider
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
-    url: jdbc:p6spy:mysql://94.191.41.206:3306/hbuy
+    url: jdbc:p6spy:mysql://cdb-4tku65hf.gz.tencentcdb.com:10074/hbuy
     username: root
-    password: 123456
+    password: 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7d0!
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10
   redis:
-    host: 94.191.41.206
+    host: 192.168.0.193
     database: 0
     port: 6379
-    password : 123456
+    password : 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7d0
     timeout: 3000
   rabbitmq:
     virtual-host: /

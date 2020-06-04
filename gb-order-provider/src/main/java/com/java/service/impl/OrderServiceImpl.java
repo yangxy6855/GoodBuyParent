@@ -18,6 +18,6 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public void saveOrder(String orderNo, String uName, String orderStatus, Long secId) {
-        orderMapper.insertOrder(orderNo,uName,orderStatus,secId);
+        orderMapper.insertOrder( orderNo,uName,orderStatus,secId);
     }
 }

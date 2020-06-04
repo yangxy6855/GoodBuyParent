@@ -11,7 +11,6 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * description：
@@ -43,6 +42,7 @@ public class OrderHandler {
             System.out.println(seckillId+"----------"+uName);
             //3、生成订单编号
             String orderNo = OrderUtil.generateOrderNum(uName);
+            System.out.println("orderNo "+orderNo+" uName "+uName);
             //4、将订单信息插入到数据库表web_order中去
             orderService.saveOrder(orderNo,uName,"0",seckillId);
             //5、手动确认订单处理完成

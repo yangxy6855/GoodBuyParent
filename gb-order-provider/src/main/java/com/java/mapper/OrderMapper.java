@@ -17,7 +17,7 @@ public interface OrderMapper {
      * @param secId
      * @return
      */
-    @Insert("INSERT INTO web_order VALUES(null,#{arg0},#{arg1},#{arg2},#{arg3})")
-    int insertOrder(String orderNo, String uName, String orderStatus, Long secId);
+    @Insert("INSERT INTO web_order VALUES(null,#{orderNo},#{uName},#{orderStatus},#{secId})")
+    int insertOrder(String orderNo,String uName, String orderStatus,Long secId);
 
 }
