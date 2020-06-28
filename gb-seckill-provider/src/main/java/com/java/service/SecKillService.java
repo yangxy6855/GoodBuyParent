@@ -1,8 +1,5 @@
 package com.java.service;
 
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +20,7 @@ public interface SecKillService {
      * 将秒杀状态由未开始(0)--->正在秒杀(1)
      * @return
      */
-    void modifyUnStart2Starting();
+    int modifyUnStart2Starting();
 
     /**
      * 将秒杀状态由正在秒杀(1)----->秒杀结束(2)

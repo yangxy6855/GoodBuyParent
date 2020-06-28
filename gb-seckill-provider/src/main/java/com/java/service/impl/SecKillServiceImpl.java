@@ -5,10 +5,9 @@ import com.java.mapper.SecKillMapper;
 import com.java.service.SecKillService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import redis.clients.jedis.JedisCluster;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +26,7 @@ public class SecKillServiceImpl implements SecKillService{
     private SecKillMapper secKillMapper;
     
     @Autowired
-    private RedisTemplate redisTemplate;
+    private JedisCluster jedisCluster;
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -38,8 +37,8 @@ public class SecKillServiceImpl implements SecKillService{
     }
 
     @Override
-    public void modifyUnStart2Starting() {
-        secKillMapper.updateUnStart2Starting();
+    public int modifyUnStart2Starting() {
+        return secKillMapper.updateUnStart2Starting();
     }
 
     @Override
@@ -59,8 +58,7 @@ public class SecKillServiceImpl implements SecKillService{
 
     @Override
     public String findProductSecKillStatus(Long seckillId) {
-        ValueOperations vop = redisTemplate.opsForValue();
-        Object o = vop.get("seckill_product_status" + seckillId);
+        Object o = jedisCluster.get("seckill_product_status" + seckillId);
         if(o==null){//redis库中记录商品状态的记录被移除了
             return "2";//商品秒杀已经结束
         }

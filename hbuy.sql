@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地-丁鹏
+Source Server         : 本地-yxy
 Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : hbuy

@@ -7,16 +7,30 @@ spring:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     url: jdbc:p6spy:mysql://cdb-4tku65hf.gz.tencentcdb.com:10074/hbuy
     username: root
-    password: 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7d0!
-    hikari:
-      maximum-pool-size: 30
-      minimum-idle: 10
+    password: 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7!
+    validationQuery: select 1 from dual
+
+
   redis:
-    host: 192.168.0.193
-    database: 0
-    port: 6379
-    password : 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7d0
-    timeout: 3000
+     # host: 127.0.0.1
+     # port: 6379
+    password: 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7d01
+    block-when-exhausted: false
+     # database: 0
+    jedis:
+      pool:
+        max-idle: 6
+        max-active: 32
+        max-wait: 100
+        min-idle: 4
+    #redis:
+    # host: 192.168.0.193
+    # database: 0
+    # port: 6379
+    # password : 52f78d1584d775d70031c493bb1aee3c975c6d590a3f19d8bdf2b6d6b2b9d7d0
+    # timeout: 3000
+
+
   rabbitmq:
     virtual-host: /
     port: 5672
